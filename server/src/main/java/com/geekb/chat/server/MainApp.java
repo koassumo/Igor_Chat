@@ -8,6 +8,8 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 public class MainApp {
+
+
     public static void main(String[] args) {
 
 
@@ -21,7 +23,10 @@ public class MainApp {
                 String msg = in.readUTF();
                 System.out.print("Сообщение от клиента: " + msg + "\n");
                 out.writeUTF("echo: " + msg);
+
+
             }
+
         } catch (IOException e) {
             e.printStackTrace();
         }

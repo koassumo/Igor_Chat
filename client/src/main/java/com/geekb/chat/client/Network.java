@@ -20,6 +20,9 @@ public class Network {
 
     public void sendMsg (String msg) throws IOException {
         out.writeUTF(msg);
+        if (msg.equals("/end")){
+            close();
+        }
     }
 
     public String readMsg() throws IOException {
@@ -48,7 +51,6 @@ public class Network {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
     }
+
 }
