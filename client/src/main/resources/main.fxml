@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.geekb.chat.client.Controller">
+    <TextArea fx:id="mainArea" editable="false" VBox.vgrow="ALWAYS" />
+    <HBox>
+        <TextField fx:id="msgField" maxWidth="Infinity" onAction="#sendMsg" promptText="Введите сообщение ..." HBox.hgrow="ALWAYS">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+        <Button onAction="#sendMsg" text="Отправить" textFill="#4025c6">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+
+    </HBox>
+</VBox>
