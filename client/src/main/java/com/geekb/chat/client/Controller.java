@@ -18,7 +18,7 @@ import java.util.ResourceBundle;
 
 public class Controller implements Initializable {    // интерфейс при появлении окна
     @FXML
-    TextArea mainArea;
+    TextArea textArea;
 
     @FXML
     TextField msgField;
@@ -33,7 +33,7 @@ public class Controller implements Initializable {    // интерфейс пр
                 try {
                     while (true) {
                         String msg = network.readMsg();
-                        mainArea.appendText(msg + "\n");
+                        textArea.appendText(msg + "\n");
                     }
                 } catch (Exception e) {
                     Platform.runLater(()->{
@@ -54,7 +54,7 @@ public class Controller implements Initializable {    // интерфейс пр
     public void sendMsg(ActionEvent actionEvent) {
         try {
             network.sendMsg(msgField.getText());
-            mainArea.appendText(msgField.getText() + "\n");
+            textArea.appendText(msgField.getText() + "\n");
             msgField.clear();
             msgField.requestFocus();
         } catch (IOException e) {
