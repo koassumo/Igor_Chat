@@ -6,8 +6,6 @@ import java.io.IOException;
 import java.net.Socket;
 
 public class Network {
-
-
     private Socket socket;
     private DataInputStream in;
     private DataOutputStream out;
@@ -20,9 +18,6 @@ public class Network {
 
     public void sendMsg (String msg) throws IOException {
         out.writeUTF(msg);
-        if (msg.equals("/end")){
-            close();
-        }
     }
 
     public String readMsg() throws IOException {

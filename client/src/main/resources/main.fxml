@@ -4,17 +4,17 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.geekb.chat.client.Controller">
-    <TextArea fx:id="textArea" editable="false" VBox.vgrow="ALWAYS" />
-    <HBox>
-        <TextField fx:id="msgField" maxWidth="Infinity" onAction="#sendMsg" promptText="Введите сообщение ..." HBox.hgrow="ALWAYS">
-         <font>
-            <Font size="14.0" />
-         </font></TextField>
-        <Button onAction="#sendMsg" text="Отправить" textFill="#4025c6">
-         <font>
-            <Font size="14.0" />
-         </font></Button>
+<VBox fx:controller="com.geekb.chat.client.Controller" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" >
+    <HBox fx:id="loginBox">
+        <TextField fx:id="loginField" HBox.hgrow="ALWAYS"/>
+        <TextField fx:id="passField" HBox.hgrow="ALWAYS"/>
+        <Button HBox.hgrow="ALWAYS" text="Войти" onAction="#tryToAuth"/>
+    </HBox>
 
+    <TextArea fx:id="textArea" editable="false" VBox.vgrow="ALWAYS" />
+
+    <HBox fx:id="newTextBox">
+        <TextField fx:id="msgField" maxWidth="Infinity" onAction="#sendMsg" promptText="Введите сообщение ..." HBox.hgrow="ALWAYS"> </TextField>
+        <Button onAction="#sendMsg" text="Отправить" textFill="#4025c6"></Button>
     </HBox>
 </VBox>
